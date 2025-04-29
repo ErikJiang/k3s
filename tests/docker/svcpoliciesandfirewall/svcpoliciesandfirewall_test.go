@@ -161,7 +161,7 @@ var _ = Describe("Verify Services Traffic policies and firewall config", Ordered
 						}
 					}
 				}
-				// As we need those variables for the connectivity test, let's check they are not emtpy
+				// As we need those variables for the connectivity test, let's check they are not empty
 				g.Expect(serverNodeName).ShouldNot(BeEmpty(), "server pod for internalTrafficPolicy=local not found")
 				g.Expect(clientPod1).ShouldNot(BeEmpty(), "client pod1 not found")
 				g.Expect(clientPod2).ShouldNot(BeEmpty(), "client pod2 not found")

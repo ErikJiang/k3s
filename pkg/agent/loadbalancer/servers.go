@@ -481,7 +481,7 @@ func (sl *serverList) runHealthChecks(ctx context.Context, serviceName string) {
 	logrus.Debugf("Stopped health checking for load balancer %s", serviceName)
 }
 
-// dialContext attemps to dial a connection to a server from the server list.
+// dialContext attempts to dial a connection to a server from the server list.
 // Success or failure is recorded to ensure that server state is updated appropriately.
 func (sl *serverList) dialContext(ctx context.Context, network, _ string) (net.Conn, error) {
 	for _, s := range sl.getServers() {

@@ -92,7 +92,7 @@ case ${OS} in
     export CC="x86_64-w64-mingw32-gcc"
     ;;
   *)
-    echo "[ERROR] unrecognized opertaing system: ${OS}"
+    echo "[ERROR] unrecognized operating system: ${OS}"
     exit 1
     ;;
 esac

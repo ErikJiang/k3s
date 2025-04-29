@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y docker.io wget
 ENV VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1
 RUN vagrant plugin install vagrant-k3s vagrant-reload vagrant-scp
 
-# Workaround for older vagrant-libvirt image and new vagrant infra wesbites
+# Workaround for older vagrant-libvirt image and new vagrant infra websites
 # See https://github.com/hashicorp/vagrant/issues/13571 and
 # https://github.com/vagrant-libvirt/vagrant-libvirt/issues/1840
 RUN wget https://app.vagrantup.com/bento/boxes/ubuntu-24.04/versions/202404.26.0/providers/libvirt.box -O bento-ubuntu24.04-202404.26.0.box

@@ -69,7 +69,7 @@ func (p *podEntry) Network() net.IPNet {
 	return p.cidr
 }
 
-// Setup sets up the agent tunnel, which is reponsible for connecting websocket tunnels to
+// Setup sets up the agent tunnel, which is responsible for connecting websocket tunnels to
 // control-plane nodes, syncing endpoints for the tunnel authorizer, and updating proxy endpoints.
 func Setup(ctx context.Context, config *daemonconfig.Node, proxy proxy.Proxy) error {
 	client, err := util.GetClientSet(config.AgentConfig.KubeConfigK3sController)
@@ -461,7 +461,7 @@ type proxySyncer func(addresses []string)
 // as well as updating the proxy loadbalancer server list.
 func (a *agentTunnel) getProxySyncer(ctx context.Context, proxy proxy.Proxy) proxySyncer {
 	disconnect := map[string]context.CancelFunc{}
-	// Attempt to connect to inital list of addresses, storing their cancellation
+	// Attempt to connect to initial list of addresses, storing their cancellation
 	// function for later when we need to disconnect.
 	for _, address := range proxy.SupervisorAddresses() {
 		if _, ok := disconnect[address]; !ok {

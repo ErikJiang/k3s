@@ -33,7 +33,7 @@ var _ = BeforeSuite(func() {
 	// For master and unreleased branches, we want the latest stable release
 	var upgradeChannel string
 	var err error
-	// We want to substract one from the minor version to get the previous release
+	// We want to subtract one from the minor version to get the previous release
 	sV, err := semver.ParseTolerant(*channel)
 	Expect(err).NotTo(HaveOccurred(), "failed to parse version from "+*channel)
 	sV.Minor--

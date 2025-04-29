@@ -90,7 +90,7 @@ func commandSetup(app *cli.Context, cfg *cmds.Server) (*etcd.SnapshotRequest, *c
 func wrapServerError(err error) error {
 	if errors.Is(err, context.DeadlineExceeded) {
 		// if the request timed out the server log likely won't contain anything useful,
-		// since the operation may have actualy succeeded despite the client timing out the request.
+		// since the operation may have actually succeeded despite the client timing out the request.
 		return err
 	}
 	return pkgerrors.WithMessage(err, "see server log for details")

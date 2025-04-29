@@ -67,7 +67,7 @@ func kubeProxyArgs(cfg *config.Agent) map[string]string {
 
 // kubeletArgsAndConfig generates default kubelet args and configuration.
 // Kubelet config is frustratingly split across deprecated CLI flags that raise warnings if you use them,
-// and a structured configuration file that upstream does not provide a convienent way to initailize with default values.
+// and a structured configuration file that upstream does not provide a convenient way to initailize with default values.
 // The defaults and our desired config also vary by OS.
 func kubeletArgsAndConfig(cfg *config.Agent) (map[string]string, *kubeletconfig.KubeletConfiguration, error) {
 	defaultConfig, err := defaultKubeletConfig(cfg)

@@ -400,7 +400,7 @@ get_k3s_selinux_version() {
             fatal "Incorrect downloader executable '$DOWNLOADER'"
             ;;
     esac
-    for i in {1..3}; do
+    for _ in {1..3}; do
         set +e
         if [ "${rpm_channel}" = "testing" ]; then
             version=$(timeout 5 ${DOWNLOADER} ${DOWNLOADER_OPTS} https://api.github.com/repos/k3s-io/k3s-selinux/releases |  grep browser_download_url | awk '{ print $2 }' | grep -oE "[^\/]+${rpm_target}\.noarch\.rpm" | head -n 1)
@@ -576,7 +576,7 @@ setup_selinux() {
     fi
 
     [ -r /etc/os-release ] && . /etc/os-release
-    if [ `expr "${ID_LIKE}" : ".*suse.*"` != 0 ]; then
+    if [ $(expr "${ID_LIKE}" : ".*suse.*") != 0 ]; then
         rpm_target=sle
         rpm_site_infix=microos
         package_installer=zypper

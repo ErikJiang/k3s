@@ -214,7 +214,7 @@ type chainingBootstrapper struct {
 }
 
 // NewChainingBootstrapper returns a p2p bootstrapper that passes through to a list of bootstrappers.
-// Addressess are returned from the first bootstrapper that returns successfully, to prevent infinite
+// Addresses are returned from the first bootstrapper that returns successfully, to prevent infinite
 // recursion if this chains through an agentBootstrapper when the server URL is set to an external
 // loadbalancer that points back at this node.
 func NewChainingBootstrapper(bootstrappers ...routing.Bootstrapper) routing.Bootstrapper {

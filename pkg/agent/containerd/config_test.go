@@ -1471,7 +1471,7 @@ func Test_UnitGetHostConfigs(t *testing.T) {
 				t.Fatalf("failed to parse %s: %v\n", registriesFile, err)
 			}
 
-			// This is an odd mishmash of linux and windows stuff just to excercise all the template bits
+			// This is an odd mishmash of linux and windows stuff just to exercise all the template bits
 			nodeConfig := &config.Node{
 				DefaultRuntime: "runhcs-wcow-process",
 				Containerd: config.Containerd{
